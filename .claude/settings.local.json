@@ -1,0 +1,40 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls \"C:/Users/Pedro Rafachine/Downloads/Reuniao\"*)",
+      "Bash(ls \"C:/Users/Pedro Rafachine/Downloads/\"*.pdf)",
+      "Bash(ls \"C:/Users/Pedro Rafachine/Downloads/Reuniao de Onboarding\"*)",
+      "Bash(xxd)",
+      "Bash(ls -la \"/c/Users/Pedro Rafachine/Downloads/Reuniao\"*SIGO*)",
+      "Bash(python3 -c \"import PyPDF2; print\\(''''pypdf2 ok''''\\)\")",
+      "Bash(python3 -c \"from pdfminer.high_level import extract_text; print\\(''''pdfminer ok''''\\)\")",
+      "Bash(pdftotext '/c/Users/Pedro Rafachine/Downloads/Reuniao de Onboarding - SIGO - 2026_03_25 18_12 GMT-03_00 - Anotações do Gemini.pdf' -)",
+      "Bash(pdftotext -layout \"/c/Users/Pedro Rafachine/Downloads/Reuniao de Onboarding - SIGO - 2026_03_25 18_12 GMT-03_00 - Anotações do Gemini.pdf\" /tmp/sigo_transcript.txt)",
+      "Read(//tmp/**)",
+      "Bash(ls \"/c/Users/Pedro Rafachine/Downloads/\"Reuniao*SIGO*)",
+      "Bash(ls \"/c/Users/Pedro Rafachine/Downloads/\"*SIGO*)",
+      "Bash(file=\"/c/Users/Pedro Rafachine/Downloads/Reuniao de Onboarding - SIGO - 2026_03_25 18_12 GMT-03_00 - Anotações do Gemini.pdf\")",
+      "Bash(cp \"$file\" /tmp/sigo_onboarding.pdf)",
+      "Bash(pdftotext -layout /tmp/sigo_onboarding.pdf /tmp/sigo_transcript.txt)",
+      "Bash(xargs -0 cp -t /tmp/)",
+      "Read(//c/tmp/**)",
+      "Bash(pdftotext -layout \"/tmp/Reuniao de Onboarding - SIGO - 2026_03_25 18_12 GMT-03_00 - Anotações do Gemini.pdf\" /tmp/sigo_transcript.txt)",
+      "Bash(xargs -0 -I{} cp \"{}\" /tmp/sigo.pdf)",
+      "Bash(pdftotext -layout /tmp/sigo.pdf /tmp/sigo_transcript.txt)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(python3 -c \"from PIL import Image; print\\(''''pillow ok''''\\)\")",
+      "Bash(python3 -c \"import pillow_heif; print\\(''''heif ok''''\\)\")",
+      "Bash(pip list:*)",
+      "Bash(pip install:*)",
+      "Bash(python3:*)",
+      "Bash(\"/c/Python313/python.exe\" -c \":*)",
+      "Bash(find '/c/Users/Pedro Rafachine/Downloads/' -maxdepth 1 \\\\\\(-name *.jpg -o -name *.jpeg -o -name *.png -o -name *.webp \\\\\\) -newer '/c/Users/Pedro Rafachine/Downloads/joao.jpg' -type f)",
+      "WebSearch",
+      "Bash(curl -sL -o \"/c/Users/Pedro Rafachine/Documents/sigo/testemunho-1.jpg\" \"https://images.unsplash.com/photo-1543269664-56d93c1b41a6?w=700&q=80\")",
+      "Bash(curl -sL -o \"/c/Users/Pedro Rafachine/Documents/sigo/testemunho-2.jpg\" \"https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=700&q=80\")",
+      "Bash(curl -sL -o \"/c/Users/Pedro Rafachine/Documents/sigo/testemunho-2b.jpg\" \"https://images.unsplash.com/photo-1606567595334-d39972c85dbe?w=700&q=80\")",
+      "Bash(curl -sL -o \"/c/Users/Pedro Rafachine/Documents/sigo/testemunho-2c.jpg\" \"https://images.unsplash.com/photo-1590650153855-d9e808231d41?w=700&q=80\")",
+      "WebFetch(domain:unsplash.com)"
+    ]
+  }
+}
