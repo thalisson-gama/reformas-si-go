@@ -1,0 +1,1891 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TKDXZ2XD');</script>
+  <!-- End Google Tag Manager -->
+  <title>Si.Go | Reformas de Alto Padrão em Brasília</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    /* ============================================================
+       CSS CUSTOM PROPERTIES
+    ============================================================ */
+    :root {
+      --black:        #000000;
+      --black-soft:   #111111;
+      --accent:       #1A1A1A;
+      --accent-light: #2A2A2A;
+      --accent-dark:  #0A0A0A;
+      --cta:          #FFFFFF;
+      --cta-hover:    #E0E0E0;
+      --cta-text:     #000000;
+      --white:        #FFFFFF;
+      --gray-light:   #F7F7F7;
+      --gray-mid:     #CCCCCC;
+      --gray-text:    #666666;
+      --font-main:    'Montserrat', sans-serif;
+      --radius-btn:   4px;
+      --transition:   0.3s ease;
+    }
+
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body {
+      font-family: var(--font-main);
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--black);
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ============================================================
+       UTILITY CLASSES
+    ============================================================ */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: clamp(26px, 4vw, 40px);
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      line-height: 1.15;
+    }
+    .section-subtitle {
+      font-size: 16px;
+      line-height: 1.7;
+      margin-top: 14px;
+      max-width: 640px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 16px 36px;
+      font-family: var(--font-main);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-radius: var(--radius-btn);
+      border: none;
+      cursor: pointer;
+      transition: transform var(--transition), box-shadow var(--transition), filter var(--transition);
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.25); }
+    .btn:active { transform: translateY(0); }
+    .btn-green  { background: var(--cta);  color: var(--cta-text); }
+    .btn-green:hover { background: var(--cta-hover); }
+    .btn-dark   { background: var(--black);  color: var(--white); }
+    .btn-dark:hover { background: var(--accent-light); }
+    .btn-outline { background: transparent; color: var(--white); border: 2px solid var(--white); }
+    .btn-outline:hover { background: var(--white); color: var(--black); }
+    .btn-sm { padding: 12px 28px; font-size: 12px; }
+
+    /* Fade-in animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ============================================================
+       1. HERO SECTION
+    ============================================================ */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 20px;
+      background:
+        linear-gradient(rgba(0,0,0,0.74), rgba(0,0,0,0.74)),
+        url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600&q=80') center/cover no-repeat;
+      color: var(--white);
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.55) 100%);
+      pointer-events: none;
+    }
+    .hero-content { position: relative; z-index: 2; max-width: 960px; }
+
+    .hero-logo {
+      width: 220px;
+      margin: 0 auto 36px;
+    }
+    .hero-logo img {
+      width: 100%;
+      height: auto;
+      filter: brightness(0) invert(1);
+    }
+
+    .hero-eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 20px;
+    }
+    .hero-headline {
+      font-size: clamp(24px, 4.2vw, 46px);
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-headline em {
+      color: var(--white);
+      font-style: normal;
+      position: relative;
+      display: inline;
+    }
+    .hero-headline em::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 2px;
+      width: 100%;
+      height: 3px;
+      background: var(--white);
+      opacity: 0.45;
+    }
+    .hero-subheadline {
+      font-size: clamp(15px, 2vw, 19px);
+      font-weight: 400;
+      line-height: 1.65;
+      color: rgba(255,255,255,0.92);
+      max-width: 660px;
+      margin: 0 auto 44px;
+    }
+    .hero-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    /* Scroll indicator */
+    .hero-scroll {
+      position: absolute;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0.55;
+      animation: bounce 2s infinite;
+    }
+    .hero-scroll svg { width: 20px; height: 20px; }
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%       { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ============================================================
+       2. COMO FUNCIONA
+    ============================================================ */
+    .how {
+      padding: 100px 20px;
+      background: var(--white);
+      text-align: center;
+    }
+    .how .section-title { color: var(--black); }
+    .how .section-subtitle { margin: 14px auto 0; color: #555; }
+    .how .partner-name { color: var(--black); font-weight: 800; }
+    .how-video-wrap {
+      margin-top: 52px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      background: var(--black-soft);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.2);
+    }
+    .video-container iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .video-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      background:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+        url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=900&q=80') center/cover;
+      cursor: pointer;
+      transition: opacity var(--transition);
+    }
+    .video-placeholder:hover { opacity: 0.9; }
+    .play-btn {
+      width: 80px;
+      height: 80px;
+      background: rgba(255,255,255,0.9);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform var(--transition), background var(--transition);
+    }
+    .video-placeholder:hover .play-btn { transform: scale(1.12); background: var(--white); }
+    .play-btn svg { width: 32px; height: 32px; fill: var(--black); margin-left: 5px; }
+    .video-placeholder span {
+      color: var(--white);
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* ============================================================
+       3. BENEFÍCIOS (3 COLUNAS)
+    ============================================================ */
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .benefit-col {
+      padding: 72px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .benefit-col:nth-child(1) { background: var(--black); }
+    .benefit-col:nth-child(2) { background: var(--accent-light); }
+    .benefit-col:nth-child(3) { background: var(--black-soft); }
+    .benefit-icon {
+      width: 56px;
+      height: 56px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .benefit-icon svg { width: 28px; height: 28px; }
+    .benefit-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+    .benefit-text {
+      font-size: clamp(20px, 2.5vw, 28px);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.3;
+    }
+    .benefit-desc { font-size: 15px; color: rgba(255,255,255,0.65); line-height: 1.7; }
+
+    /* ============================================================
+       4. EXEMPLOS / TIPOS DE REFORMA
+    ============================================================ */
+    .examples {
+      padding: 100px 20px;
+      background: var(--black);
+      text-align: center;
+    }
+    .examples .section-label { color: rgba(255,255,255,0.45); }
+    .examples .section-title { color: var(--white); }
+    .examples .section-subtitle { color: rgba(255,255,255,0.75); margin: 12px auto 52px; }
+    .examples-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto 40px;
+    }
+    .example-card {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+      display: flex;
+      flex-direction: column;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .example-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 56px rgba(0,0,0,0.5);
+    }
+    .card-header {
+      background: var(--accent-light);
+      position: relative;
+    }
+    .card-header img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      opacity: 0.85;
+    }
+    .card-specs {
+      display: flex;
+      justify-content: space-around;
+      padding: 14px 8px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .spec-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      color: var(--white);
+    }
+    .spec-item svg { width: 20px; height: 20px; opacity: 0.8; }
+    .spec-item span { font-size: 11px; font-weight: 700; letter-spacing: 0.5px; }
+    .spec-item small { font-size: 10px; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; }
+    .card-body {
+      background: var(--white);
+      padding: 24px 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card-body .card-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #888;
+    }
+    .card-value {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--black);
+    }
+    .card-row { border-top: 1px solid #eee; padding-top: 12px; }
+    .card-footer {
+      background: var(--accent-light);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .card-footer .footer-label {
+      font-size: 11px;
+      color: rgba(255,255,255,0.55);
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .card-installment {
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,0.4);
+      border-radius: 40px;
+      padding: 6px 28px;
+      letter-spacing: 1px;
+    }
+    .examples-note {
+      font-size: 12px;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 36px;
+      font-style: italic;
+    }
+
+    /* ============================================================
+       5. OBRAS REALIZADAS — CARROSSEL
+    ============================================================ */
+    .gallery {
+      padding: 100px 20px;
+      background: var(--gray-light);
+      text-align: center;
+    }
+    .gallery .section-title { color: var(--black); }
+    .gallery .section-subtitle { color: #666; margin: 12px auto 52px; }
+    .carousel-wrapper {
+      position: relative;
+      max-width: 1100px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      gap: 20px;
+    }
+    .carousel-slide {
+      flex: 0 0 calc((100% - 40px) / 3);
+      aspect-ratio: 4 / 3;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .carousel-slide:hover img { transform: scale(1.05); }
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      background: var(--white);
+      border: none;
+      border-radius: 50%;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      transition: background var(--transition), transform var(--transition);
+    }
+    .carousel-btn:hover { background: var(--black); }
+    .carousel-btn:hover svg { stroke: white; }
+    .carousel-btn svg { width: 20px; height: 20px; stroke: var(--black); stroke-width: 2.5; fill: none; }
+    .carousel-prev { left: -24px; }
+    .carousel-next { right: -24px; }
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 28px;
+    }
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gray-mid);
+      border: none;
+      cursor: pointer;
+      transition: background var(--transition), transform var(--transition);
+    }
+    .dot.active { background: var(--black); transform: scale(1.3); }
+
+    /* ============================================================
+       6. DEPOIMENTOS
+    ============================================================ */
+    .testimonials {
+      padding: 100px 20px;
+      background: var(--white);
+      text-align: center;
+    }
+    .testimonials .section-title { color: var(--black); }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      max-width: 960px;
+      margin: 52px auto 0;
+    }
+    .testimonial-card {
+      background: var(--gray-light);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .testimonial-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(0,0,0,0.12); }
+    .testimonial-img-wrap { position: relative; }
+    .testimonial-img-wrap img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      object-position: center top;
+    }
+    .testimonial-img-wrap .watermark {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background: rgba(0,0,0,0.85);
+      color: white;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      padding: 4px 10px;
+      border-radius: 3px;
+      text-transform: uppercase;
+    }
+    .testimonial-body {
+      padding: 28px 28px 32px;
+      text-align: left;
+    }
+    .testimonial-name {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--black);
+      margin-bottom: 14px;
+    }
+    .testimonial-quote {
+      font-size: 15px;
+      line-height: 1.75;
+      color: #555;
+      font-style: italic;
+    }
+    .testimonial-quote::before { content: '\201C'; font-size: 48px; line-height: 0; vertical-align: -18px; color: var(--black); margin-right: 4px; font-style: normal; }
+
+    /* ============================================================
+       7. GARANTIMOS SEGURANÇA
+    ============================================================ */
+    .security {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .security-text {
+      background: var(--black);
+      padding: 80px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 24px;
+    }
+    .security-text .section-label { color: rgba(255,255,255,0.45); }
+    .security-text .section-title { color: var(--white); }
+    .security-subtitle {
+      font-size: 18px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.5;
+    }
+    .security-divider {
+      width: 60px;
+      height: 3px;
+      background: var(--white);
+      border-radius: 2px;
+    }
+    .security-text p { font-size: 15px; color: rgba(255,255,255,0.72); line-height: 1.8; }
+    .security-image {
+      position: relative;
+      background: var(--black-soft);
+      overflow: hidden;
+    }
+    .security-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.7;
+    }
+    .security-logo-overlay {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      width: 80px;
+      height: 36px;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      color: white;
+    }
+    .security-badge {
+      position: absolute;
+      bottom: 36px;
+      left: 36px;
+      background: var(--black);
+      color: var(--white);
+      padding: 14px 22px;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+    }
+    .security-badge strong {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+    .security-badge span { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; opacity: 0.8; }
+
+    /* ============================================================
+       8. FORMULÁRIO MULTI-STEP
+    ============================================================ */
+    .form-section {
+      padding: 100px 20px;
+      background: linear-gradient(135deg, var(--black) 0%, var(--accent-light) 60%);
+      text-align: center;
+    }
+    .form-section .section-label { color: rgba(255,255,255,0.45); }
+    .form-section .section-title { color: var(--white); }
+    .form-section .section-subtitle { color: rgba(255,255,255,0.7); margin: 12px auto 52px; }
+
+    .steps-indicator {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      margin-bottom: 44px;
+    }
+    .step-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      position: relative;
+    }
+    .step-circle {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      border: 2px solid rgba(255,255,255,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 15px;
+      color: rgba(255,255,255,0.4);
+      transition: all var(--transition);
+    }
+    .step-circle.active   { background: var(--white); border-color: var(--white); color: var(--black); }
+    .step-circle.complete { background: var(--white); border-color: var(--white); color: var(--black); }
+    .step-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      transition: color var(--transition);
+    }
+    .step-item.active .step-label   { color: var(--white); }
+    .step-item.complete .step-label { color: rgba(255,255,255,0.8); }
+    .step-connector {
+      width: 80px;
+      height: 2px;
+      background: rgba(255,255,255,0.15);
+      margin-bottom: 26px;
+      position: relative;
+    }
+    .step-connector-fill {
+      position: absolute;
+      left: 0; top: 0;
+      height: 100%;
+      background: var(--white);
+      width: 0%;
+      transition: width 0.5s ease;
+    }
+
+    .form-card {
+      max-width: 580px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px;
+      padding: 44px 40px;
+      backdrop-filter: blur(8px);
+    }
+    .form-step { display: none; }
+    .form-step.active { display: block; animation: fadeSlide 0.4s ease; }
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateX(20px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 8px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 16px;
+      background: rgba(255,255,255,0.9);
+      border: 2px solid transparent;
+      border-radius: 4px;
+      font-family: var(--font-main);
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--black);
+      transition: border-color var(--transition), box-shadow var(--transition);
+      outline: none;
+      appearance: none;
+    }
+    .form-group input::placeholder { color: #aaa; font-weight: 400; }
+    .form-group input:focus,
+    .form-group select:focus { border-color: var(--black); box-shadow: 0 0 0 3px rgba(0,0,0,0.12); }
+    .form-group input.error { border-color: #e74c3c; box-shadow: 0 0 0 3px rgba(231,76,60,0.15); }
+    .error-msg {
+      font-size: 12px;
+      color: #ff6b6b;
+      margin-top: 5px;
+      display: none;
+    }
+    .error-msg.show { display: block; }
+    .form-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .form-actions .btn { flex: 1; padding: 16px; font-size: 13px; }
+    .btn-back {
+      background: rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.8);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .btn-back:hover { background: rgba(255,255,255,0.2); }
+
+    .form-success {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      animation: fadeSlide 0.5s ease;
+    }
+    .form-success.show { display: flex; }
+    .success-icon {
+      width: 72px;
+      height: 72px;
+      background: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .success-icon svg { width: 36px; height: 36px; stroke: var(--black); stroke-width: 2.5; fill: none; }
+    .form-success h3 { font-size: 22px; font-weight: 800; color: white; }
+    .form-success p { font-size: 15px; color: rgba(255,255,255,0.7); text-align: center; }
+
+    /* ============================================================
+       9. FOOTER
+    ============================================================ */
+    footer {
+      position: relative;
+      padding: 72px 20px 48px;
+      text-align: center;
+      background:
+        linear-gradient(rgba(0,0,0,0.88), rgba(0,0,0,0.88)),
+        url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400&q=80') center/cover no-repeat;
+      color: rgba(255,255,255,0.6);
+    }
+    .footer-logo {
+      width: 120px;
+      margin: 0 auto 28px;
+    }
+    .footer-logo img {
+      width: 100%;
+      height: auto;
+      filter: brightness(0) invert(1);
+    }
+    .footer-divider {
+      width: 40px;
+      height: 2px;
+      background: rgba(255,255,255,0.3);
+      margin: 0 auto 20px;
+    }
+    .footer-copy { font-size: 13px; margin-bottom: 10px; }
+    .footer-dev {
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+    .footer-dev a { color: var(--white); font-weight: 600; }
+
+    /* ============================================================
+       RESPONSIVO
+    ============================================================ */
+    @media (max-width: 900px) {
+      .benefits { grid-template-columns: 1fr; }
+      .benefit-col { padding: 52px 28px; }
+      .examples-grid { grid-template-columns: 1fr; max-width: 420px; }
+      .security { grid-template-columns: 1fr; }
+      .security-text { padding: 60px 28px; }
+      .security-image { min-height: 360px; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .form-card { padding: 32px 24px; }
+    }
+    @media (max-width: 680px) {
+      .carousel-slide { flex: 0 0 calc(100%); }
+      .carousel-prev { left: 8px; }
+      .carousel-next { right: 8px; }
+      .step-connector { width: 40px; }
+      .hero-logo { width: 160px; }
+    }
+
+    /* ============================================================
+       BARRA DE PROVA SOCIAL
+    ============================================================ */
+    .social-proof {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,0.15);
+    }
+    .proof-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255,255,255,0.85);
+    }
+    .proof-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .proof-icon svg { width: 20px; height: 20px; }
+    .proof-number {
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.1;
+    }
+    .proof-label {
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+    }
+    .proof-text { display: flex; flex-direction: column; }
+    @media (max-width: 680px) {
+      .social-proof { gap: 20px; flex-wrap: wrap; justify-content: center; }
+      .proof-number { font-size: 18px; }
+    }
+
+    /* ============================================================
+       FAQ ACCORDION
+    ============================================================ */
+    .faq {
+      padding: 100px 20px;
+      background: var(--gray-light);
+    }
+    .faq .container { max-width: 800px; }
+    .faq .section-title { color: var(--black); text-align: center; }
+    .faq .section-label { text-align: center; }
+    .faq .section-subtitle { color: #666; text-align: center; margin: 12px auto 52px; }
+    .faq-item {
+      background: var(--white);
+      border-radius: 8px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      overflow: hidden;
+      transition: box-shadow var(--transition);
+    }
+    .faq-item:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+    .faq-question {
+      width: 100%;
+      padding: 22px 24px;
+      background: none;
+      border: none;
+      font-family: var(--font-main);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--black);
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .faq-question::after {
+      content: '+';
+      font-size: 24px;
+      font-weight: 300;
+      color: var(--black);
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+    }
+    .faq-item.open .faq-question::after {
+      content: '\2212';
+      transform: rotate(180deg);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+    }
+    .faq-answer p {
+      padding: 0 24px 22px;
+      font-size: 15px;
+      line-height: 1.75;
+      color: #555;
+    }
+
+    /* ============================================================
+       TRUST BADGES
+    ============================================================ */
+    .trust-badges {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0.5px;
+    }
+    .trust-item svg { width: 16px; height: 16px; opacity: 0.65; }
+
+    /* ============================================================
+       CTA FIXO MOBILE
+    ============================================================ */
+    .mobile-cta {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 9998;
+      padding: 12px 16px;
+      background: rgba(0,0,0,0.92);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      transform: translateY(100%);
+      transition: transform 0.4s ease;
+    }
+    .mobile-cta.visible { transform: translateY(0); }
+    .mobile-cta .btn { width: 100%; text-align: center; padding: 16px; font-size: 13px; }
+    @media (max-width: 900px) {
+      .mobile-cta { display: block; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TKDXZ2XD"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- ============================================================
+       1. HERO
+  ============================================================ -->
+  <header class="hero">
+    <div class="hero-content">
+      <div class="hero-logo" aria-label="Logo Si.Go Engenharia">
+        <img src="logo.svg" alt="Si.Go | Inovação para sua obra" />
+      </div>
+
+      <p class="hero-eyebrow">Reformas de Alto Padrão | Brasília, DF</p>
+
+      <h1 class="hero-headline">
+        Sua reforma no prazo e <em>sem surpresas no orçamento</em>
+      </h1>
+
+      <p class="hero-subheadline">
+        Engenharia dedicada para quem não aceita improvisos. Transparência total no custo, rigor na execução e um único ponto de contato do projeto à entrega das chaves.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#formulario" class="btn btn-green">Agendar diagnóstico gratuito</a>
+      </div>
+
+      <!-- Prova social -->
+      <div class="social-proof">
+        <div class="proof-item">
+          <div class="proof-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+          </div>
+          <div class="proof-text">
+            <span class="proof-number" data-count="10">10</span>
+            <span class="proof-label">Anos de atuação</span>
+          </div>
+        </div>
+        <div class="proof-item">
+          <div class="proof-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="proof-text">
+            <span class="proof-number" data-count="22">+22</span>
+            <span class="proof-label">Clientes atendidos</span>
+          </div>
+        </div>
+        <div class="proof-item">
+          <div class="proof-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <div class="proof-text">
+            <span class="proof-number" data-count="87">+87 mil m²</span>
+            <span class="proof-label">Reformados e gerenciados</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      Rolar
+    </div>
+  </header>
+
+
+  <!-- ============================================================
+       3. BENEFÍCIOS
+  ============================================================ -->
+  <section class="benefits" aria-label="Benefícios">
+
+    <div class="benefit-col fade-in">
+      <div class="benefit-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" aria-hidden="true">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+      </div>
+      <span class="benefit-label">Orçamento blindado</span>
+      <p class="benefit-text">Sem aditivos surpresa. O valor que você aprova é o valor que você paga.</p>
+      <p class="benefit-desc">Variação máxima de 10% sobre o orçamento original, e somente se houver mudança de projeto aprovada por você.</p>
+    </div>
+
+    <div class="benefit-col fade-in" style="transition-delay:0.15s">
+      <div class="benefit-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+        </svg>
+      </div>
+      <span class="benefit-label">Prazo garantido</span>
+      <p class="benefit-text">Cronograma detalhado com acompanhamento semanal por fotos e relatórios</p>
+      <p class="benefit-desc">Você acompanha cada etapa mesmo à distância. Se algo muda, você sabe antes, não depois.</p>
+    </div>
+
+    <div class="benefit-col fade-in" style="transition-delay:0.3s">
+      <div class="benefit-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" aria-hidden="true">
+          <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+        </svg>
+      </div>
+      <span class="benefit-label">Do projeto à entrega</span>
+      <p class="benefit-text">Um único ponto de contato. Da concepção ao acabamento, a Si.Go resolve.</p>
+      <p class="benefit-desc">Coordenamos arquitetos, fornecedores e equipes para que você não precise gerenciar nada.</p>
+    </div>
+
+  </section>
+
+  <!-- ============================================================
+       4. EXEMPLOS DE REFORMAS
+  ============================================================ -->
+  <section class="examples fade-in">
+    <div class="container">
+      <p class="section-label">Projetos reais</p>
+      <h2 class="section-title">Tipos de Reforma que Executamos</h2>
+      <p class="section-subtitle">
+        Veja exemplos de projetos que a Si.Go entrega em Brasília e região com controle total de custo e qualidade.
+      </p>
+
+      <div class="examples-grid">
+
+        <article class="example-card fade-in">
+          <div class="card-header">
+            <img loading="lazy" src="card-cozinha.webp" alt="Apartamento reformado pela Si.Go no Sudoeste com acabamento de alto padrão" />
+            <div class="card-specs">
+              <div class="spec-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                <span>120 m²</span><small>Área</small>
+              </div>
+              <div class="spec-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                <span>75 dias</span><small>Prazo</small>
+              </div>
+              <div class="spec-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <span>Completa</span><small>Escopo</small>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div>
+              <p class="card-label">Reforma completa de apartamento</p>
+            </div>
+            <div class="card-row">
+              <p class="card-label">Inclui</p>
+              <p style="font-size:14px;color:#555;">Marcenaria planejada, bancada em mármore, revestimentos, pintura, elétrica e hidráulica completas</p>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="footer-label">Bairro</span>
+            <span class="card-installment" style="font-size:16px;padding:6px 20px;">Sudoeste, Brasília</span>
+          </div>
+        </article>
+
+        <article class="example-card fade-in" style="transition-delay:0.15s">
+          <div class="card-header">
+            <img loading="lazy" src="card-living.webp" alt="Apartamento reformado pela Si.Go no Lago Sul com sala integrada e iluminação planejada" />
+            <div class="card-specs">
+              <div class="spec-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                <span>200 m²</span><small>Área</small>
+              </div>
+              <div class="spec-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                <span>120 dias</span><small>Prazo</small>
+              </div>
+              <div class="spec-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <span>Completa</span><small>Escopo</small>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div>
+              <p class="card-label">Reforma completa de apartamento</p>
+            </div>
+            <div class="card-row">
+              <p class="card-label">Inclui</p>
+              <p style="font-size:14px;color:#555;">Iluminação em trilho, revestimentos importados, marcenaria sob medida, automação e gestão completa</p>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="footer-label">Bairro</span>
+            <span class="card-installment" style="font-size:16px;padding:6px 20px;">Lago Sul, Brasília</span>
+          </div>
+        </article>
+
+        <article class="example-card fade-in" style="transition-delay:0.3s">
+          <div class="card-header">
+            <img loading="lazy" src="card-banheiro.webp" alt="Apartamento reformado pela Si.Go em Águas Claras com acabamento premium" />
+            <div class="card-specs">
+              <div class="spec-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                <span>85 m²</span><small>Área</small>
+              </div>
+              <div class="spec-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                <span>60 dias</span><small>Prazo</small>
+              </div>
+              <div class="spec-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <span>Completa</span><small>Escopo</small>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div>
+              <p class="card-label">Reforma completa de apartamento</p>
+            </div>
+            <div class="card-row">
+              <p class="card-label">Inclui</p>
+              <p style="font-size:14px;color:#555;">Revestimentos, louças, metais, marcenaria sob medida, pintura e impermeabilização</p>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="footer-label">Bairro</span>
+            <span class="card-installment" style="font-size:16px;padding:6px 20px;">Águas Claras, DF</span>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="examples-note">* Dados baseados em projetos recentes. Prazo e escopo variam conforme as condições do imóvel.</p>
+
+      <a href="#formulario" class="btn btn-green">Solicitar diagnóstico para minha reforma</a>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       5. OBRAS REALIZADAS — CARROSSEL
+  ============================================================ -->
+  <section class="gallery fade-in">
+    <div class="container">
+      <p class="section-label">Portfolio</p>
+      <h2 class="section-title">Reformas Realizadas</h2>
+      <p class="section-subtitle">Conheça alguns dos projetos que entregamos em Brasília. Lago Sul, Sudoeste e região.</p>
+
+      <div class="carousel-wrapper" aria-label="Galeria de reformas realizadas">
+        <button class="carousel-btn carousel-prev" aria-label="Imagem anterior">
+          <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+
+        <div class="carousel-track" id="carouselTrack">
+          <div class="carousel-slide"><img loading="lazy" src="obra-1.webp" alt="Reforma Si.Go | Projeto 1" /></div>
+          <div class="carousel-slide"><img loading="lazy" src="obra-2.webp" alt="Reforma Si.Go | Projeto 2" /></div>
+          <div class="carousel-slide"><img loading="lazy" src="obra-3.webp" alt="Reforma Si.Go | Projeto 3" /></div>
+          <div class="carousel-slide"><img loading="lazy" src="obra-4.webp" alt="Reforma Si.Go | Projeto 4" /></div>
+          <div class="carousel-slide"><img loading="lazy" src="obra-5.webp" alt="Reforma Si.Go | Projeto 5" /></div>
+          <div class="carousel-slide"><img loading="lazy" src="obra-6.webp" alt="Reforma Si.Go | Projeto 6" /></div>
+        </div>
+
+        <button class="carousel-btn carousel-next" aria-label="Próxima imagem">
+          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+
+      <div class="carousel-dots" id="carouselDots" aria-label="Páginas da galeria"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       6. DEPOIMENTOS — OCULTADO TEMPORARIAMENTE
+       Para reexibir, remova o style="display:none" do <section> abaixo.
+  ============================================================ -->
+  <section class="testimonials fade-in" style="display:none;">
+    <div class="container">
+      <p class="section-label">Quem já reformou</p>
+      <h2 class="section-title">O que nossos clientes dizem</h2>
+
+      <div class="testimonials-grid">
+
+        <article class="testimonial-card">
+          <div class="testimonial-img-wrap">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=700&q=80" alt="Casal cliente da Si.Go" />
+            <span class="watermark">Cliente</span>
+          </div>
+          <div class="testimonial-body">
+            <h3 class="testimonial-name">Cliente | Sudoeste, DF</h3>
+            <p class="testimonial-quote">
+              O preço deles é mais alto, mas a tranquilidade que você tem durante a obra vale cada centavo. Não precisei me preocupar com nada.
+            </p>
+          </div>
+        </article>
+
+        <article class="testimonial-card">
+          <div class="testimonial-img-wrap">
+            <img loading="lazy" src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=700&q=80" alt="Cliente da Si.Go" />
+            <span class="watermark">Cliente</span>
+          </div>
+          <div class="testimonial-body">
+            <h3 class="testimonial-name">Cliente | Lago Sul, DF</h3>
+            <p class="testimonial-quote">
+              Já tinha sido enganada por outra empresa antes. Com a Si.Go foi completamente diferente: orçamento transparente, prazo cumprido e qualidade impecável.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       7. GARANTIMOS SEGURANÇA
+  ============================================================ -->
+  <section class="security fade-in" aria-label="Garantias e segurança">
+
+    <div class="security-text">
+      <p class="section-label">Nossa garantia</p>
+      <h2 class="section-title">Não prometemos que não haverá problemas. Prometemos resolvê-los.</h2>
+      <p class="security-subtitle">Engenharia de verdade: técnica, responsabilidade e jogo aberto.</p>
+      <div class="security-divider"></div>
+      <p>
+        Cada obra é acompanhada pessoalmente pelos engenheiros João Vitor e Carlos Vinícius, sócios-fundadores da Si.Go, registrados no CREA e com ART emitida antes do início. Contratos claros, cronograma visível e relatórios semanais de progresso direto no seu WhatsApp.
+      </p>
+      <p>
+        Se houver qualquer alteração de escopo, você é informado antes, com custo detalhado e aprovação formal. Sem surpresas. Sem calotes. Sem obra inacabada.
+      </p>
+    </div>
+
+    <div class="security-image">
+      <img loading="lazy" src="fundadores.webp" alt="Engenheiros João Vitor e Carlos Vinícius, fundadores da Si.Go" />
+      <div class="security-logo-overlay"><img src="logo.svg" alt="Si.Go" style="width:60px;height:auto;filter:brightness(0) invert(1);" /></div>
+      <div class="security-badge">
+        <strong>Do projeto à entrega</strong>
+        <span>Gestão completa</span>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ============================================================
+       FAQ — QUEBRANDO OBJEÇÕES
+  ============================================================ -->
+  <section class="faq fade-in">
+    <div class="container">
+      <p class="section-label">Dúvidas frequentes</p>
+      <h2 class="section-title">Tire Suas Dúvidas</h2>
+      <p class="section-subtitle">Respondemos as perguntas mais comuns antes de você dar o próximo passo.</p>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">E se a reforma ultrapassar o orçamento?</button>
+        <div class="faq-answer"><p>Nossa metodologia prevê uma variação máxima de 10% sobre o orçamento original, e somente se houver mudanças de projeto aprovadas por você. Qualquer alteração de escopo passa por aprovação formal com custo detalhado antes de ser executada. Não trabalhamos com surpresas.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Já tive problemas com outra empresa. Como sei que vocês são diferentes?</button>
+        <div class="faq-answer"><p>Entendemos esse receio. É o medo número um de quem já foi mal atendido. Trabalhamos com contrato registrado, ART emitida pelo CREA, cronograma detalhado e relatórios semanais com fotos enviados pelo WhatsApp. Toda a planilha de custos é aberta e você acompanha cada centavo investido.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Moro em apartamento. E os vizinhos?</button>
+        <div class="faq-answer"><p>Cuidamos disso desde o primeiro dia. Comunicamos formalmente o condomínio, respeitamos horários permitidos e, quando possível, fazemos uma ação de cortesia com os vizinhos no início da obra. A gestão de relacionamento com o entorno faz parte do nosso processo.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Quanto tempo leva uma reforma completa?</button>
+        <div class="faq-answer"><p>Depende do escopo. Reformas setoriais (cozinha, banheiros) levam de 45 a 60 dias. Reformas completas de apartamento, de 90 a 120 dias. Casas de alto padrão, de 5 a 8 meses. Você recebe um cronograma detalhado antes do início e acompanha semanalmente.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Vocês são mais caros que outros profissionais?</button>
+        <div class="faq-answer"><p>Sim, nosso custo é maior do que contratar um pedreiro avulso ou uma equipe sem engenharia. Mas nossos clientes escolhem a Si.Go pela tranquilidade: orçamento que não estoura, prazo que se cumpre, qualidade que se entrega. Quem já trabalhou conosco entende exatamente o porquê do investimento.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       8. FORMULÁRIO MULTI-STEP
+  ============================================================ -->
+  <section class="form-section fade-in" id="formulario">
+    <div class="container">
+      <p class="section-label">Dê o primeiro passo</p>
+      <h2 class="section-title">Solicite seu Diagnóstico</h2>
+      <p class="section-subtitle">
+        Preencha o formulário abaixo. Nossa equipe entrará em contato em até 24h para uma conversa consultiva sobre o seu projeto.
+      </p>
+
+      <!-- Indicador de progresso -->
+      <div class="steps-indicator" aria-label="Progresso do formulário">
+        <div class="step-item active" id="stepItem1">
+          <div class="step-circle active" id="stepCircle1">1</div>
+          <span class="step-label">Seus dados</span>
+        </div>
+        <div class="step-connector"><div class="step-connector-fill" id="stepConnector"></div></div>
+        <div class="step-item" id="stepItem2">
+          <div class="step-circle" id="stepCircle2">2</div>
+          <span class="step-label">Sua reforma</span>
+        </div>
+      </div>
+
+      <!-- Formulário -->
+      <div class="form-card">
+
+        <!-- ETAPA 1 -->
+        <div class="form-step active" id="formStep1" role="group" aria-labelledby="step1heading">
+          <h3 id="step1heading" style="color:white;font-size:16px;font-weight:700;margin-bottom:24px;letter-spacing:1px;text-transform:uppercase;">Seus dados de contato</h3>
+
+          <div class="form-group">
+            <label for="nome">Nome completo *</label>
+            <input type="text" id="nome" name="nome" placeholder="Ex: João Silva" autocomplete="name" required />
+            <span class="error-msg" id="nomeError">Por favor, insira seu nome completo.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-mail *</label>
+            <input type="email" id="email" name="email" placeholder="seuemail@email.com" autocomplete="email" required />
+            <span class="error-msg" id="emailError">Por favor, insira um e-mail válido.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="whatsapp">WhatsApp *</label>
+            <input type="tel" id="whatsapp" name="whatsapp" placeholder="(61) 9 0000-0000" autocomplete="tel" required />
+            <span class="error-msg" id="whatsappError">Por favor, insira seu WhatsApp.</span>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn btn-green" onclick="nextStep()">Continuar &rarr;</button>
+          </div>
+        </div>
+
+        <!-- ETAPA 2 -->
+        <div class="form-step" id="formStep2" role="group" aria-labelledby="step2heading">
+          <h3 id="step2heading" style="color:white;font-size:16px;font-weight:700;margin-bottom:24px;letter-spacing:1px;text-transform:uppercase;">Sobre a sua reforma</h3>
+
+          <div class="form-group">
+            <label for="terreno">Tipo de imóvel *</label>
+            <select id="terreno" name="terreno" required>
+              <option value="" disabled selected>Selecione uma opção</option>
+              <option value="apartamento">Apartamento</option>
+              <option value="casa">Casa</option>
+              <option value="comercial">Imóvel comercial</option>
+            </select>
+            <span class="error-msg" id="terrenoError">Por favor, selecione uma opção.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="projeto">Você já tem um projeto arquitetônico? *</label>
+            <select id="projeto" name="projeto" required>
+              <option value="" disabled selected>Selecione uma opção</option>
+              <option value="sim">Sim, já tenho projeto</option>
+              <option value="nao">Não, ainda preciso de orientação</option>
+            </select>
+            <span class="error-msg" id="projetoError">Por favor, selecione uma opção.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="cidade">Bairro / Região *</label>
+            <input type="text" id="cidade" name="cidade" placeholder="Ex: Lago Sul, Sudoeste, Noroeste..." required />
+            <span class="error-msg" id="cidadeError">Por favor, insira seu bairro.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="renda">Investimento estimado *</label>
+            <input type="text" id="renda" name="renda" placeholder="Ex: R$ 150.000" required />
+            <span class="error-msg" id="rendaError">Por favor, insira o investimento estimado.</span>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn btn-back" onclick="prevStep()">&larr; Voltar</button>
+            <button type="button" class="btn btn-green" onclick="submitForm()">Solicitar diagnóstico gratuito &rarr;</button>
+          </div>
+        </div>
+
+        <!-- SUCESSO -->
+        <div class="form-success" id="formSuccess" role="status" aria-live="polite">
+          <div class="success-icon">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3>Recebemos sua solicitação!</h3>
+          <p>Estamos redirecionando você para o WhatsApp com uma mensagem pronta para acelerar o seu atendimento. Se o redirecionamento não abrir em alguns segundos, <a id="waFallback" href="https://wa.me/556131990301" target="_blank" rel="noopener" style="color:#25D366;text-decoration:underline;font-weight:600;">clique aqui</a>.</p>
+        </div>
+
+      </div>
+
+      <!-- Trust badges -->
+      <div class="trust-badges">
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Registrado no CREA
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Dados seguros
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Sem compromisso
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          Resposta em 24h
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       9. FOOTER
+  ============================================================ -->
+  <footer>
+    <div class="footer-logo">
+      <img src="logo.svg" alt="Si.Go" />
+    </div>
+    <div class="footer-divider"></div>
+    <p class="footer-copy">&copy; 2026 Si.Go Engenharia. Todos os direitos reservados.</p>
+    <p class="footer-dev">Desenvolvido com 🤍 por <a href="#" target="_blank" rel="noopener">M² BLACK</a></p>
+  </footer>
+
+  <!-- ============================================================
+       JAVASCRIPT
+  ============================================================ -->
+  <script>
+    'use strict';
+
+    /* ============================================================
+       FADE-IN — Intersection Observer
+    ============================================================ */
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    fadeEls.forEach(el => observer.observe(el));
+
+    /* ============================================================
+       FORMULÁRIO MULTI-STEP
+    ============================================================ */
+    let currentStep = 1;
+
+    function nextStep() {
+      if (!validateStep1()) return;
+      currentStep = 2;
+      document.getElementById('formStep1').classList.remove('active');
+      document.getElementById('formStep2').classList.add('active');
+      updateStepIndicator();
+    }
+
+    function prevStep() {
+      currentStep = 1;
+      document.getElementById('formStep2').classList.remove('active');
+      document.getElementById('formStep1').classList.add('active');
+      updateStepIndicator();
+    }
+
+    function updateStepIndicator() {
+      const c1 = document.getElementById('stepCircle1');
+      const c2 = document.getElementById('stepCircle2');
+      const i1 = document.getElementById('stepItem1');
+      const i2 = document.getElementById('stepItem2');
+      const conn = document.getElementById('stepConnector');
+
+      if (currentStep === 2) {
+        c1.classList.remove('active'); c1.classList.add('complete');
+        i1.classList.remove('active'); i1.classList.add('complete');
+        c2.classList.add('active');
+        i2.classList.add('active');
+        conn.style.width = '100%';
+      } else {
+        c1.classList.add('active'); c1.classList.remove('complete');
+        i1.classList.add('active'); i1.classList.remove('complete');
+        c2.classList.remove('active');
+        i2.classList.remove('active');
+        conn.style.width = '0%';
+      }
+    }
+
+    function validateStep1() {
+      let valid = true;
+      const nome = document.getElementById('nome');
+      const email = document.getElementById('email');
+      const whatsapp = document.getElementById('whatsapp');
+
+      if (nome.value.trim().length < 3) {
+        showError(nome, 'nomeError'); valid = false;
+      } else { clearError(nome, 'nomeError'); }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email.value.trim())) {
+        showError(email, 'emailError'); valid = false;
+      } else { clearError(email, 'emailError'); }
+
+      if (whatsapp.value.trim().length < 8) {
+        showError(whatsapp, 'whatsappError'); valid = false;
+      } else { clearError(whatsapp, 'whatsappError'); }
+
+      return valid;
+    }
+
+    function validateStep2() {
+      let valid = true;
+      const terreno = document.getElementById('terreno');
+      const projeto = document.getElementById('projeto');
+      const cidade = document.getElementById('cidade');
+      const renda = document.getElementById('renda');
+
+      if (!terreno.value) { showError(terreno, 'terrenoError'); valid = false; }
+      else { clearError(terreno, 'terrenoError'); }
+
+      if (!projeto.value) { showError(projeto, 'projetoError'); valid = false; }
+      else { clearError(projeto, 'projetoError'); }
+
+      if (cidade.value.trim().length < 2) { showError(cidade, 'cidadeError'); valid = false; }
+      else { clearError(cidade, 'cidadeError'); }
+
+      if (renda.value.trim().length < 2) { showError(renda, 'rendaError'); valid = false; }
+      else { clearError(renda, 'rendaError'); }
+
+      return valid;
+    }
+
+    function showError(input, errId) {
+      input.classList.add('error');
+      document.getElementById(errId).classList.add('show');
+    }
+    function clearError(input, errId) {
+      input.classList.remove('error');
+      document.getElementById(errId).classList.remove('show');
+    }
+
+    // URL do webhook de captura (AtenderBem)
+    const WEBHOOK_URL = 'https://m2black.atenderbem.com/webhookcapture/capture/88531d2fb8594118a22f819576735e4b';
+
+    function submitForm() {
+      if (!validateStep2()) return;
+
+      const submitBtn = document.querySelector('#formStep2 .btn-green');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Enviando...';
+      submitBtn.disabled = true;
+
+      // Telefone: apenas dígitos, sem código do país
+      const whatsappDigits = document.getElementById('whatsapp').value.replace(/\D/g, '');
+
+      // UTMs (se existirem na URL)
+      const qs = new URLSearchParams(window.location.search);
+      const now = new Date();
+      const dd = String(now.getDate()).padStart(2, '0');
+      const mm = String(now.getMonth() + 1).padStart(2, '0');
+      const yyyy = now.getFullYear();
+      const hh = String(now.getHours()).padStart(2, '0');
+      const mi = String(now.getMinutes()).padStart(2, '0');
+
+      const payload = {
+        // Campos padrão do AtenderBem
+        Nome: document.getElementById('nome').value.trim(),
+        Email: document.getElementById('email').value.trim(),
+        WhatsApp: whatsappDigits,
+        // Campos customizados (rótulos precisam estar criados no CRM)
+        tipo_imovel: document.getElementById('terreno').value,
+        projeto_arquitetonico: document.getElementById('projeto').value,
+        bairro: document.getElementById('cidade').value.trim(),
+        investimento: document.getElementById('renda').value.trim(),
+        // Metadados da origem
+        Nome_do_site: 'Si.Go Engenharia',
+        Nome_da_pagina: document.title,
+        URL_da_pagina: window.location.href,
+        Data: `${dd}/${mm}/${yyyy}`,
+        Horario: `${hh}:${mi}`,
+        utm_source: qs.get('utm_source') || '',
+        utm_medium: qs.get('utm_medium') || '',
+        utm_campaign: qs.get('utm_campaign') || '',
+        utm_term: qs.get('utm_term') || '',
+        utm_content: qs.get('utm_content') || ''
+      };
+
+      fetch(WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+      .then(res => {
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        showSuccess();
+      })
+      .catch(err => {
+        console.error('Webhook falhou:', err);
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        alert('Não foi possível enviar no momento. Por favor, tente novamente em instantes ou fale conosco pelo WhatsApp.');
+      });
+
+      function showSuccess() {
+        document.getElementById('formStep2').classList.remove('active');
+        document.getElementById('formSuccess').classList.add('show');
+        document.getElementById('stepCircle2').classList.add('complete');
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+
+        // Monta mensagem pré-escrita com o nome informado
+        const nome = document.getElementById('nome').value.trim();
+        const primeiroNome = nome.split(' ')[0] || '';
+        const mensagem = `Olá! Acabei de solicitar o diagnóstico no site da Si.Go. Meu nome é ${nome} e gostaria de dar continuidade à conversa sobre minha reforma.`;
+        const waUrl = `https://wa.me/556131990301?text=${encodeURIComponent(mensagem)}`;
+
+        // Atualiza link de fallback caso o redirect automático falhe
+        const fallback = document.getElementById('waFallback');
+        if (fallback) fallback.href = waUrl;
+
+        // Redireciona automaticamente para o WhatsApp
+        setTimeout(() => { window.location.href = waUrl; }, 800);
+      }
+    }
+
+    /* ============================================================
+       CARROSSEL
+    ============================================================ */
+    (function initCarousel() {
+      const track = document.getElementById('carouselTrack');
+      const dotsContainer = document.getElementById('carouselDots');
+      const slides = track.querySelectorAll('.carousel-slide');
+      const prevBtn = document.querySelector('.carousel-prev');
+      const nextBtn = document.querySelector('.carousel-next');
+
+      let slidesPerView = getSlidesPerView();
+      let current = 0;
+      let autoplayTimer;
+
+      function getSlidesPerView() {
+        return window.innerWidth <= 680 ? 1 : 3;
+      }
+
+      const totalPages = Math.ceil(slides.length / slidesPerView);
+
+      function buildDots() {
+        dotsContainer.innerHTML = '';
+        const pages = Math.ceil(slides.length / getSlidesPerView());
+        for (let i = 0; i < pages; i++) {
+          const dot = document.createElement('button');
+          dot.className = 'dot' + (i === 0 ? ' active' : '');
+          dot.setAttribute('aria-label', `Página ${i + 1}`);
+          dot.addEventListener('click', () => goTo(i));
+          dotsContainer.appendChild(dot);
+        }
+      }
+
+      function getSlideWidth() {
+        const perView = getSlidesPerView();
+        const gap = 20;
+        return (track.parentElement.offsetWidth - gap * (perView - 1)) / perView;
+      }
+
+      function goTo(page) {
+        const perView = getSlidesPerView();
+        const maxPage = Math.ceil(slides.length / perView) - 1;
+        current = Math.max(0, Math.min(page, maxPage));
+        const slideW = getSlideWidth();
+        const gap = 20;
+        track.style.transform = `translateX(-${current * (slideW + gap) * perView}px)`;
+        document.querySelectorAll('.dot').forEach((d, i) => {
+          d.classList.toggle('active', i === current);
+        });
+      }
+
+      prevBtn.addEventListener('click', () => { resetAutoplay(); goTo(current - 1); });
+      nextBtn.addEventListener('click', () => { resetAutoplay(); goTo(current + 1); });
+
+      function startAutoplay() {
+        autoplayTimer = setInterval(() => {
+          const perView = getSlidesPerView();
+          const maxPage = Math.ceil(slides.length / perView) - 1;
+          goTo(current < maxPage ? current + 1 : 0);
+        }, 4000);
+      }
+      function resetAutoplay() { clearInterval(autoplayTimer); startAutoplay(); }
+
+      window.addEventListener('resize', () => {
+        buildDots();
+        goTo(0);
+      });
+
+      buildDots();
+      goTo(0);
+      startAutoplay();
+    })();
+
+    /* ============================================================
+       MÁSCARA WHATSAPP
+    ============================================================ */
+    document.getElementById('whatsapp').addEventListener('input', function() {
+      let v = this.value.replace(/\D/g, '').slice(0, 11);
+      if (v.length > 6) v = `(${v.slice(0,2)}) ${v.slice(2,7)}-${v.slice(7)}`;
+      else if (v.length > 2) v = `(${v.slice(0,2)}) ${v.slice(2)}`;
+      else if (v.length > 0) v = `(${v}`;
+      this.value = v;
+    });
+
+    /* ============================================================
+       MÁSCARA REAIS — Investimento estimado
+    ============================================================ */
+    document.getElementById('renda').addEventListener('input', function() {
+      let v = this.value.replace(/\D/g, '');
+      if (v.length === 0) { this.value = ''; return; }
+      v = parseInt(v, 10).toString();
+      v = v.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+      this.value = 'R$ ' + v;
+    });
+
+    /* ============================================================
+       CTA FIXO MOBILE — Mostrar/esconder
+    ============================================================ */
+    (function() {
+      const mobileCta = document.getElementById('mobileCta');
+      const formSection = document.getElementById('formulario');
+      if (!mobileCta || !formSection) return;
+
+      window.addEventListener('scroll', function() {
+        const scrollY = window.scrollY;
+        const formRect = formSection.getBoundingClientRect();
+        const formVisible = formRect.top < window.innerHeight && formRect.bottom > 0;
+
+        if (scrollY > 400 && !formVisible) {
+          mobileCta.classList.add('visible');
+        } else {
+          mobileCta.classList.remove('visible');
+        }
+      }, { passive: true });
+    })();
+
+    /* ============================================================
+       COUNTER ANIMADO — Prova social
+    ============================================================ */
+    (function() {
+      const counters = document.querySelectorAll('.proof-number[data-count]');
+      let animated = false;
+
+      const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !animated) {
+            animated = true;
+            counters.forEach(counter => {
+              const target = parseInt(counter.dataset.count);
+              const original = counter.textContent;
+              const match = original.match(/^(\D*)(\d+)(.*)$/);
+              const prefix = match ? match[1] : '';
+              const suffix = match ? match[3] : '';
+              let current = 0;
+              const step = Math.ceil(target / 40);
+              const timer = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                  current = target;
+                  clearInterval(timer);
+                }
+                counter.textContent = prefix + current + suffix;
+              }, 30);
+            });
+            counterObserver.disconnect();
+          }
+        });
+      }, { threshold: 0.5 });
+
+      counters.forEach(c => counterObserver.observe(c));
+    })();
+
+  </script>
+
+  <!-- CTA Fixo Mobile -->
+  <div class="mobile-cta" id="mobileCta">
+    <a href="#formulario" class="btn btn-green">Agendar diagnóstico gratuito</a>
+  </div>
+
+</body>
+</html>
